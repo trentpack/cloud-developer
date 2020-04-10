@@ -7,7 +7,8 @@ export const config = {
     "dialect": "postgres",
     "aws_region": process.env.APP_AWS_REG,
     "aws_media_bucket": process.env.APP_BUCKET,
-    "aws_profile": process.env.APP_AWS_PROF
+    "aws_profile": process.env.APP_AWS_PROF,
+    "jwt_secret": process.env.APP_JWT_SECRET
   },
   "prod": {
     "username": process.env.POSTGRES_USER,
@@ -17,6 +18,7 @@ export const config = {
     "dialect":  "postgres",
     "aws_region": process.env.APP_AWS_REG,
     "aws_media_bucket": process.env.APP_BUCKET,
-    "aws_profile": process.env.APP_AWS_PROF
+    "aws_profile": process.env.APP_AWS_PROF,
+    "jwt_secret": process.env.APP_JWT_SECRET
   }
 }
