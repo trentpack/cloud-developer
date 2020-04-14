@@ -2,6 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
 var validUrl = require('valid-url');
+const util = require('util');
+const urlExists = util.promisify(require('url-exists'));
 
 (async () => {
 
@@ -29,7 +31,7 @@ var validUrl = require('valid-url');
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
   /**************************************************************************** */
   app.get( "/filteredimage/",
-    async ( req: Request, res: Response ) => {
+    async ( req, res, next ) => {
       let { image_url } = req.query;
 
       if ( !image_url ) {
@@ -42,7 +44,13 @@ var validUrl = require('valid-url');
                   .send(`image_url is not a valid url`);
       }
 
-      let resultFile = null;
+      let isExists = await urlExists(image_url);
+      if (!isExists) {
+        return res.status(400)
+                  .send(`image_url is not a valid url`);
+      }
+
+      let resultFile: string = null;
       try {
         resultFile = await filterImageFromURL(image_url);
       } catch(e) {
