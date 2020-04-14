@@ -1,7 +1,7 @@
 {
   "name": "udacity-c2-restapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "Trent's implementation for Udacity proj2",
   "main": "src/server.js",
   "scripts": {
     "start": "node .",
@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Gabriel Ruttner",
+  "author": "Trenton Pack",
   "license": "ISC",
   "dependencies": {
     "@types/bcrypt": "^3.0.0",
@@ -26,7 +26,7 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^7.11.0",
     "reflect-metadata": "^0.1.13",
-    "sequelize": "^5.10.0",
+    "sequelize": "^5.21.6",
     "sequelize-typescript": "^0.6.11"
   },
   "devDependencies": {
