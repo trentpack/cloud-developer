@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/grutt/udacity-c2-image-filter.git"
+    "url": "git+https://github.com/trentpack/cloud-developer.git"
   },
   "author": "",
   "license": "ISC",
@@ -30,6 +30,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "jimp": "^0.10.1",
+    "url-exists": "^1.0.3",
     "valid-url": "^1.0.9"
   }
 }
